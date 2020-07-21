@@ -1,0 +1,25 @@
+
+<h3>Order Summary:</h3>
+
+<div *ngIf="products.length">
+  <table class="table">
+    <tr>
+      <th>Product Name</th>
+      <th>Amount</th>
+      <th>Quantity</th>
+    </tr>
+    <tr *ngFor="let prod of products">
+      <td>{{prod.productName}}</td>
+      <td>{{prod.itemCost| currency}}</td>
+      <td>{{prod.quantity}}</td>
+    </tr>
+    <tr class="bold">
+      <th >Total</th>
+      <th>{{totalAmount | currency}}</th>
+    </tr>
+  </table>
+</div>
+<div *ngIf=!products.length>
+  no products added
+</div>
+      

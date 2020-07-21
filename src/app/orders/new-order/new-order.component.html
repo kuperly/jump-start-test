@@ -1,0 +1,45 @@
+<div>
+  <h3>{{title}}</h3>
+  <form (ngSubmit)="submit()" #orderForm="ngForm" class="customer-form" novalidate>
+    <div class="form-group">
+      <label>Customer Name</label>
+      <select class="form-control" 
+              [(ngModel)]="order.customerId"
+              name="customerId" 
+              required>
+          <option *ngFor="let customer of customers" [ngValue]="customer.id">{{customer.firstName}} {{customer.lastName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Product Name</label>
+      <select class="form-control" 
+              [(ngModel)]="product.productName"
+              (ngModelChange)="handleProductSelected($event)"
+              [ngModelOptions]="{standalone: true}"
+              required>
+          <option *ngFor="let product of products" [ngValue]="product.productName">{{product.productName}}</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Quantity</label>
+      <input type="number" class="form-control" [(ngModel)]="product.quantity"  [ngModelOptions]="{standalone: true}" required>
+
+    </div>
+    <div class="form-group">
+      <label>Price</label>
+      <input type="text" disabled class="form-control" [ngModelOptions]="{standalone: true}" [(ngModel)]="product.itemCost">
+    </div>
+
+    <button id="add-item-btn" class="btn btn-info" (click)="handleAddItemClicked($event)" [disabled]="!product.quantity || !product.itemCost || !product.productName">Add Item</button>
+    <order-summary [products]="order.products" [totalAmount]="totalAmount" ></order-summary>
+
+    <div>
+      <div class="pull-right">
+        <button class="btn btn-default" (click)="cancel($event)">Cancel</button>&nbsp;&nbsp;
+        <button id=submit-btn type="submit" class="btn btn-success" [disabled]="orderForm.pristine || !orderForm.valid || !order.products.length"> Insert </button>
+      </div>
+    </div>
+    <div class="alert alert-danger" *ngIf="errorMessage != null">{{ errorMessage }}</div>
+  </form>
+  <br />
+</div>

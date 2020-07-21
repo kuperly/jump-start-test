@@ -1,0 +1,10 @@
+[
+    {"id": 1, "productName": "Surfboard", "itemCost": 299.99}, 
+    {"id": 2, "productName": "Wax", "itemCost": 5.99},
+    {"id": 3, "productName": "Shark Repellent", "itemCost": 15.99},
+    {"id": 4, "productName": "Saddle", "itemCost": 599.99},
+    {"id": 5, "productName": "Riding cap", "itemCost": 79.99},
+    {"id": 6, "productName": "Baseball", "itemCost": 9.99},
+    {"id": 7, "productName": "Bat", "itemCost": 19.99},
+    {"id": 8, "productName": "Car", "itemCost": 42999.99}
+]
