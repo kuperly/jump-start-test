@@ -14,7 +14,7 @@ services:
       context: .
       dockerfile: .docker/nginx.dockerfile
     ports:
-      - "80:80"
+      - "3000"
       - "443:443"
     depends_on: 
       - node
