@@ -122,7 +122,6 @@ app.get('/api/orders/:id', function(req, res) {
 
 app.post('/api/orders', (req, res) => {
     let postedOrder = req.body;
-    console.log('postedOrder', postedOrder);
     const costomerIndex = customers.findIndex( customer => customer.id === postedOrder.customerId );
     // get last id
 
