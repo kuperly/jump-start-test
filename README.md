@@ -19,12 +19,10 @@ Add new order functionality that connected new order to existing customer.
 * recieved all existing products in my site.
 * used in NewOrderComponent for present user all existing products. 
 
-One of my main problem I ran into was to build a unit test, I made some reserach for make it work.
+One of my main problem I ran into was to build a unit test and fixing existing e2e tests, I made some reserach for make it work.
 
 
 ## Running the Application locally with Node.js
-
-1. Install the latest LTS version of Node.js from https://nodejs.org. *IMPORTANT: The server uses ES2015 features AND the Angular CLI so you need a current version of Node.js.*
 
 1. Run `npm install` to install app dependencies
 
